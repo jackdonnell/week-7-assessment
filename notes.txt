@@ -1,0 +1,16 @@
+tiny- insert 29.708 μs
+tiny- append 84.375 μs
+
+s- insert 22.292 μs
+s- append 48.375 μs
+
+m- insert 131.625 μs
+m- append 84 μs
+
+l- insert 6.663791 ms
+l- append 411.75 μs
+
+xl- insert 769.436625 ms
+xl- append 2.493417 ms
+
+For the insert function we see that in the tiny and small arrays it performs faster but once it gets to scale it takes sigificantly longer than the append function. This is because the double insert has an exponential runtime complexity due to it using a for loop with the unshift method which has to move every value in the array over a place. The double append has a runtime complexity of O(n) because it uses the same for loop but instead of unshift it uses .push which places the new value in the array at the end and has a runtime of only O(1).
